@@ -15,7 +15,7 @@ void main() {
 
   group('Testes de requisição a API de busca por texto', () {
     test('Deve retornar uma lista de ResultSeach', () async {
-      //? Por quê na linha 19 o teste só dá certo se o parâmetro for o mesmo da
+      //? Por quê na linha 20 o teste só dá certo se o parâmetro for o mesmo da
       //? linha 23?
       when(() => repository.search('Carlos')).thenAnswer((_) async =>
           const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
