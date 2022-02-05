@@ -6,5 +6,5 @@ import 'package:dartz/dartz.dart';
 // implementado nada além deles, porém podemos ter o contrato, que permitirá
 // o acesso a camadas externas
 abstract class SearchRepository {
-  Future<Either<FailureSearch, List<ResultSearch>>> search(String searchText);
+  Future<Either<FailureSearch, List<ResultSearch>>> search(String? searchText);
 }
