@@ -13,30 +13,50 @@ void main() {
 
   final usecase = SearchByTextImpl(repository);
 
-  test('Deve retornar uma lista de ResultSeach', () async {
-    when(() => repository.search('')).thenAnswer((_) async =>
-        const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
+  group('Testes de requisição a API de busca por texto', () {
+    test('Deve retornar uma lista de ResultSeach', () async {
+      //? Por quê na linha 19 o teste só dá certo se o parâmetro for o mesmo da
+      //? linha 23?
+      when(() => repository.search('Carlos')).thenAnswer((_) async =>
+          const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
 
-    final result = await usecase('');
+      final result = await usecase('Carlos');
 
-    // Expera que o resultado seja o direito do Either
-    expect(result, isA<Right>());
+      // Expera que o resultado seja o direito do Either
+      expect(result, isA<Right>());
 
-    expect(result, isA<Right<FailureSearch, List<ResultSearch>>>());
-  });
+      expect(result, isA<Right<FailureSearch, List<ResultSearch>>>());
+    });
 
-  test('Deve retornar uma exception caso o texto seja invalido', () async {
-    when(() => repository.search('')).thenAnswer((_) async =>
-        const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
+    test('Deve retornar uma exception caso o texto seja invalido', () async {
+      when(() => repository.search('')).thenAnswer((_) async =>
+          const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
 
-    final result = await usecase(null);
+      final result = await usecase(null);
 
-    // Expera que o resultado seja o direito do Either
-    // expect(result, isA<Right>());
-    expect(result.isLeft(), true);
+      // Expera que o resultado seja o direito do Either
+      // expect(result, isA<Right>());
+      expect(result.isLeft(), true);
 
-    // .fold significa, se left e se Right, retornando o esperado
-    // expect(result.fold((left) => left, (right) => right), isA<InvalidTextError>());
-    expect(result.fold(id, id), isA<InvalidTextError>());
+      // .fold significa, se left e se Right, retornando o esperado
+      // expect(result.fold((left) => left, (right) => right), isA<InvalidTextError>());
+      expect(result.fold(id, id), isA<InvalidTextError>());
+    });
+
+    test('Deve retornar uma exception caso o texto seja uma string vazia',
+        () async {
+      when(() => repository.search('')).thenAnswer((_) async =>
+          const Right<FailureSearch, List<ResultSearch>>(<ResultSearch>[]));
+
+      final result = await usecase('');
+
+      // Expera que o resultado seja o direito do Either
+      // expect(result, isA<Right>());
+      expect(result.isLeft(), true);
+
+      // .fold significa, se left e se Right, retornando o esperado
+      // expect(result.fold((left) => left, (right) => right), isA<InvalidTextError>());
+      expect(result.fold(id, id), isA<InvalidTextError>());
+    });
   });
 }

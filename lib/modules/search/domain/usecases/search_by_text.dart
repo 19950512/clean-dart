@@ -22,7 +22,7 @@ class SearchByTextImpl implements SearchByText {
   Future<Either<FailureSearch, List<ResultSearch>>> call(
     String? searchText,
   ) async {
-    if (searchText == null) {
+    if (searchText == null || searchText.isEmpty) {
       return Left(InvalidTextError());
     }
 
