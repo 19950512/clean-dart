@@ -13,7 +13,7 @@ void main() {
 
   final usecase = SearchByTextImpl(repository);
 
-  group('Testes de requisição a API de busca por texto', () {
+  group('Testes de requisição a API de busca por texto: ', () {
     test('Deve retornar uma lista de ResultSeach', () async {
       //? Por quê na linha 20 o teste só dá certo se o parâmetro for o mesmo da
       //? linha 23?
