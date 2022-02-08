@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   mocktail: ^0.2.0
+  dio: ^4.0.4
 
 
   # The following adds the Cupertino Icons font to your application.
