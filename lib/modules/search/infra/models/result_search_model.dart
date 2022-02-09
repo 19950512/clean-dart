@@ -17,9 +17,9 @@ class ResultSearchModel extends ResultSearch {
 
   factory ResultSearchModel.fromMap(Map<String, dynamic> map) {
     return ResultSearchModel(
-      img: map['img'],
-      title: map['title'],
-      content: map['content'],
+      img: map['avatar_url'],
+      title: map['login'],
+      content: map['node_id'],
     );
   }
 
