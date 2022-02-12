@@ -28,17 +28,15 @@ void main() {
   });
 
   test("deve retornar uma excessão se o código for diferente de 200", () async {
-    when(() => dio.get('')).thenAnswer((_) async => Response(
+    when(() => dio.get('https://api.github.com/search/users?q=')).thenAnswer((_) async => Response(
         requestOptions: RequestOptions(path: ''), data: null, statusCode: 401));
 
-    final result = await datasource.getSearch('');
-    expect(result, throwsA(isA<DatasourceError>()));
+    expect(() async => await datasource.getSearch(''), throwsA(isA<DatasourceError>()));
   });
 
   test("deve retornar uma excessão se houver um erro no dio", () async {
-    when(() => dio.get('')).thenThrow(Exception());
+    when(() => dio.get('https://api.github.com/search/users?q=')).thenThrow(Exception());
 
-    final result = await datasource.getSearch('');
-    expect(result, throwsA(isA<Exception>()));
+    expect(() async => await datasource.getSearch(''), throwsA(isA<Exception>()));
   });
 }
