@@ -16,10 +16,10 @@ void main() {
   final datasource = GithubDatasource(dio);
 
   test("deve retornar uma lista de ResultSearchModel", () async {
-    //? Por quê o teste só dá certo se o parâmetro da linha 20 for o mesmo da
-    //? linha 25?
-    when(() => dio.get('')).thenAnswer((_) async => Response(
-        requestOptions: RequestOptions(path: 'teste'),
+    //? Por quê o teste só dá certo se o parâmetro da linha 22 for o mesmo da
+    //? linha 26?
+    when(() => dio.get('https://api.github.com/search/users?q=')).thenAnswer((_) async => Response(
+        requestOptions: RequestOptions(path: ''),
         data: jsonDecode(githubResponse),
         statusCode: 200));
 
