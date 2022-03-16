@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.0"
+  ansicolor:
+    dependency: transitive
+    description:
+      name: ansicolor
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   args:
     dependency: transitive
     description:
@@ -99,6 +106,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.4"
+  dart_console:
+    dependency: transitive
+    description:
+      name: dart_console
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   dartz:
     dependency: "direct main"
     description:
@@ -120,6 +134,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.0"
+  ffi:
+    dependency: transitive
+    description:
+      name: ffi
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.2"
+  fhir_yaml:
+    dependency: transitive
+    description:
+      name: fhir_yaml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.2"
   file:
     dependency: transitive
     description:
@@ -158,6 +186,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  http:
+    dependency: transitive
+    description:
+      name: http
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.13.4"
   http_multi_server:
     dependency: transitive
     description:
@@ -270,6 +305,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.26.0"
   shelf:
     dependency: transitive
     description:
@@ -303,6 +352,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slidy:
+    dependency: "direct main"
+    description:
+      name: slidy
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.2+2"
   source_map_stack_trace:
     dependency: transitive
     description:
@@ -415,6 +471,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.4.1"
   yaml:
     dependency: transitive
     description:
