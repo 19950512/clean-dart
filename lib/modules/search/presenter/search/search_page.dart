@@ -20,8 +20,11 @@ class _SearchPageState extends State<SearchPage> {
           const TextField(),
           Expanded(
             child: ListView.builder(
+              itemCount: 1,
               itemBuilder: (_, id) {
-                return Container();
+                return const Center(
+                  child: Text('GitHub'),
+                );
               },
             ),
           ),
